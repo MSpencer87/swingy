@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<link rel="tab icon" href="http://www.iconj.com/icon.php?pid=oa17ur2l07" type="image/x-icon" /> 
+
+<div class="appwrap">
+<div class="bgimage">
+
+<div class="top" align="right">
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
+<span id="user_nav">
+<% if user_signed_in? %>
+<%= current_user.name %> | 
+<%= link_to "Home", rounds_path %> | 
+<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "Sign up", new_user_registration_path %> |
+<%= link_to "Log in", new_user_session_path %>
+<% end %>
+</span>
+</div>
+
+
+<html>
+<head>
+  <title>Swingy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="datawrap">
+<%= yield %>
+</div>
+
+</body>
+</html>
+
+</div>
+</div>

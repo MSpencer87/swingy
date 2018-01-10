@@ -1,0 +1,21 @@
+<h1>Hole #<%= @round_hole.number %></h1>
+
+
+
+<% @round_hole.round.course.course_holes.each do |ch| %>
+  <% if @round_hole.round.course.id == ch.course.id %>
+    <% if @round_hole.number == ch.number %>
+      <h1>
+      <strong>Par </strong><%=ch.par%>  
+      <strong>Distance </strong><%=ch.distance%>
+      </h1>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br> 
+ 
+
+<%= render 'form' %>
+
+<%= link_to 'Back', @round_hole.round %>

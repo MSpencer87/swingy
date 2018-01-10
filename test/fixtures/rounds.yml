@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  private: false
+  course_id: 1
+  holes: 1
+  notes: MyText
+  course_id: 
+  user_id: 
+
+two:
+  private: false
+  course_id: 1
+  holes: 1
+  notes: MyText
+  course_id: 
+  user_id: 

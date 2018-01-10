@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 1
+  number: 1
+  par: 1
+  distance: 1
+  rating: 1
+  notes: MyText
+  course_id: 
+
+two:
+  course_id: 1
+  number: 1
+  par: 1
+  distance: 1
+  rating: 1
+  notes: MyText
+  course_id: 

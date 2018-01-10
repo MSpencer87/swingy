@@ -1,0 +1,57 @@
+<%= link_to 'Play a Round', new_round_path %>
+|  <%= link_to  'View Courses', courses_path %>
+<h1>My Rounds</h1>
+<table align="center">
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Score</th>
+      <th>Date</th>      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rrounds = @rounds.sort_by(&:created_at) %>
+    <% @rrounds.each do |round| %>
+    <% if round.user_id == current_user.id %>
+      <tr>
+        <td><%= round.course.name %></td>
+        <td><%= round.score %></td>
+        <td><%= round.created_at.strftime(format='%D'.to_s) %></td>
+        <td><%= link_to 'Show', round %></td>
+        <td><%= link_to 'Destroy', round, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h1>Shared Rounds</h1>
+<table align="center">
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Score</th>
+      <th>Date</th>
+      <th>Golfer</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rounds.shuffle.each do |round| %>
+     <% if round.private == false && round.user_id != current_user.id %>
+      <tr>
+        <td><%= round.course.name %></td>
+        <td><%= round.score %></td>
+        <td><%= round.created_at.strftime(format='%D'.to_s) %></td>
+        <td><%= round.user.name %></td>
+        <td><%= link_to 'Show', round %></td>
+      </tr>
+     <% end %>
+    <% end %>
+  </tbody>
+</table>

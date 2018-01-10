@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coursehole_id: 1
+  pro: 1
+  mens: 1
+  womens: 1
+  coursehole_id: 
+
+two:
+  coursehole_id: 1
+  pro: 1
+  mens: 1
+  womens: 1
+  coursehole_id: 

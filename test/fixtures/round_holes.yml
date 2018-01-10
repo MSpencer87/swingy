@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round_id: 1
+  course_id: 1
+  score: 1
+  strokes: 1
+  putts: 1
+  notes: MyText
+  round: 
+  course_hole_id: 
+
+two:
+  round_id: 1
+  course_id: 1
+  score: 1
+  strokes: 1
+  putts: 1
+  notes: MyText
+  round: 
+  course_hole_id: 

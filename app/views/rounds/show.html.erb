@@ -1,0 +1,100 @@
+
+<h1>
+  <%= @round.course.name %>
+</h1>
+
+<table align="center">
+
+<th> Round Information </th>
+<tr>
+<td>
+  <strong>Date</strong>
+  <%= @round.created_at.strftime(format='%D'.to_s) %>
+</td>
+</tr>
+
+<tr>
+<td>
+  <strong>Holes</strong>
+  <%= @round.holes %>
+  <strong>Par</strong>
+  <%= @round.course.par %>
+</td>
+</tr>
+
+<tr>
+<td>
+  <strong>Score
+  <%= @round.score %>
+  </strong>
+</td>
+</tr>
+
+<tr>
+<td>
+ <% if user_signed_in? && @round.user_id == current_user.id %>
+  <%= form_for(@round) do |f| %>
+    <strong>Private
+      <%= f.check_box :private %>
+      <%= f.submit 'Update Privacy' %>
+  <% end %> 
+     </strong>
+  <% end %>
+</td>
+</tr>
+</table>
+<p>
+  <strong>Notes</strong>
+  <%= @round.notes %>
+</p>
+
+<h1>Round Holes</h1>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Hole</th>
+      <th>Par</th>      
+      <th>Score</th>
+      <th>Strokes</th>
+      <th>Putts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @round.round_holes.each do |round_hole| %>
+      <tr>
+        <td><%= round_hole.number %></td>
+     <% @course_holes.each do |ch| %>
+     <% if round_hole.number == ch.number %>
+        <td><%= ch.par %></td>
+     <% end %>
+     <% end %>      
+ 
+        <td><%= round_hole.score %></td>
+        <td><%= round_hole.strokes %></td>
+        <td><%= round_hole.putts %></td>
+    <% if round_hole.round.user_id == current_user.id %>
+        <td><%= link_to 'Enter Score', edit_round_hole_path(round_hole) %></td>
+        <td><%#= link_to 'Destroy', round_hole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>    
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @round.user_id == current_user.id %>
+ <%= form_for(@round) do |f| %>
+  <span class="field">
+      <%=  f.text_field :notes %>
+  </span>
+  <span class="actions">
+    <%= f.submit 'Add Note' %>
+  </span>
+ <% end %>
+<% end %>
+
+
+<br>
+<%= link_to 'Back', rounds_path %>

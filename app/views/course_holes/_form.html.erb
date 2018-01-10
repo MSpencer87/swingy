@@ -1,0 +1,25 @@
+<%= form_for([@course, @course_hole]) do |f| %>
+  <% if @course_hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_hole.errors.count, "error") %> prohibited this course_hole from being saved:</h2>
+
+      <ul>
+      <% @course_hole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :par %>
+    <%= f.select :par, [3,4,5] %>
+    <%= f.label :distance %>
+    <%= f.select :distance, options_for_select(25...600) %>
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select(1...@course_hole.course.holes+1)%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

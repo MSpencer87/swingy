@@ -1,0 +1,30 @@
+<%= form_for(@round_hole) do |f| %>
+  <% if @round_hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@round_hole.errors.count, "error") %> prohibited this round_hole from being saved:</h2>
+
+      <ul>
+      <% @round_hole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strokes %>
+    <%= f.select :strokes, options_for_select(1..5) %>
+    <%= f.label :putts %>
+    <%= f.select :putts, options_for_select(1..4) %>
+    <%= f.label :score %>
+    <%= f.select :score, options_for_select(1..8) %>
+  </div>
+  <div>
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Continue'%>
+  </div>
+<% end %>

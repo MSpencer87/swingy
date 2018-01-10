@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @round_hole.round_id %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @round_hole.course_id %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @round_hole.score %>
+</p>
+
+<p>
+  <strong>Strokes:</strong>
+  <%= @round_hole.strokes %>
+</p>
+
+<p>
+  <strong>Putts:</strong>
+  <%= @round_hole.putts %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @round_hole.notes %>
+</p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @round_hole.round %>
+</p>
+
+<p>
+  <strong>Course hole:</strong>
+  <%= @round_hole.course_hole %>
+</p>
+
+<%= link_to 'Edit', edit_round_hole_path(@round_hole) %> |
+<%= link_to 'Back', @round_hole.round %>

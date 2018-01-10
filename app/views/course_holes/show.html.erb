@@ -1,0 +1,45 @@
+<h1>
+  <%= @course_hole.course.name %>
+</h1>
+
+<p style="font-size: 16pt;">
+  <strong>Hole</strong>
+  <%= @course_hole.number %> | 
+  <strong>Par</strong>
+  <%= @course_hole.par %> | 
+  <strong>Distance</strong>
+  <%= @course_hole.distance %>
+<p>
+
+<p>
+  <strong>Rating</strong>
+  <%= @course_hole.rating %>
+</p>
+
+<p>
+  <strong>Notes</strong>
+  <%= @course_hole.notes %>
+</p>
+
+<%= form_for([@course, @course_hole]) do |f| %>
+  <% if @course_hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_hole.errors.count, "error") %> prohibited this course_hole from being saved:</h2>
+
+      <ul>
+      <% @course_hole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Add Note'%>
+  </div>
+<% end %>
+<%= link_to 'Edit', edit_course_hole_path(@course_hole) %> |
+<%= link_to 'Back', @course_hole.course %>

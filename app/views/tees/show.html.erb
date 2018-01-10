@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pro:</strong>
+  <%= @tee.pro %>
+</p>
+
+<p>
+  <strong>Mens:</strong>
+  <%= @tee.mens %>
+</p>
+
+<p>
+  <strong>Womens:</strong>
+  <%= @tee.womens %>
+</p>
+
+<p>
+  <strong>Course Hole:</strong>
+  <%= @tee.course_hole %>
+</p>
+
+<%= link_to 'Edit', edit_tee_path(@tee) %> |
+<%= link_to 'Back', course_hole_course_path %>
