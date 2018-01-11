@@ -21,5 +21,5 @@
 </tr>
 </table>
 
-![Alt text](https://github.com/MSpencer87/465/blob/master/swingy/public/screen_capture1.png?raw=true "Swingy1")
-![Alt text](https://github.com/MSpencer87/465/blob/master/swingy/public/screen_capture2.png?raw=true "Swingy2")
+![Alt text](https://github.com/MSpencer87/swingy/blob/master/public/screen_capture1.png?raw=true "Swingy1")
+![Alt text](https://github.com/MSpencer87/swingy/blob/master/public/screen_capture2.png?raw=true "Swingy2")
